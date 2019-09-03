@@ -18,6 +18,7 @@ import java.net.Socket;
 public class Servidor implements Runnable {
 
     Socket cliente = null;
+    boolean win1, win2;
     static int port = 0;
     boolean status = true;
     ServerSocket servidor = null;
@@ -52,19 +53,28 @@ public class Servidor implements Runnable {
     public void validarMensaje() {
         if (mensaje.equals("negro1") && FrmServidor.bomba1 == 1) {
             FrmServidor.h1.stop();
+            win1 = true;
         } else if (mensaje.equals("rojo1") && FrmServidor.bomba1 == 2) {
             FrmServidor.h1.stop();
+            win1 = true;
         } else if (mensaje.equals("azul1") && FrmServidor.bomba1 == 3) {
             FrmServidor.h1.stop();
+            win1 = true;
         } else if (mensaje.equals("negro2") && FrmServidor.bomba1 == 1) {
             FrmServidor.h2.stop();
+            win2 = true;
         } else if (mensaje.equals("rojo2") && FrmServidor.bomba1 == 2) {
             FrmServidor.h2.stop();
+            win2 = true;
         } else if (mensaje.equals("azul2") && FrmServidor.bomba1 == 3) {
             FrmServidor.h2.stop();
+            win2 = true;
+        } else if (win1 == true && win2 == true) {
+            desconectar();
         } else {
             FrmServidor.h1.stop();
             FrmServidor.h2.stop();
+            desconectar();
 
         }
     }

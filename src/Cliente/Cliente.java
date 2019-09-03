@@ -33,7 +33,7 @@ public class Cliente {
             cliente.close();
 
         } catch (IOException e) {
-            System.out.println("error" + e);
+            System.out.println("No se pudo conectar con el servidor");
         }
     }
 

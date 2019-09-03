@@ -5,6 +5,8 @@
  */
 package Cliente;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author alvar
@@ -171,35 +173,55 @@ public class FrmCliente extends javax.swing.JFrame {
 
     private void lbl1NegroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lbl1NegroActionPerformed
         // TODO add your handling code here:
-        cliente.enviarMensaje("negro1", Integer.parseInt(txtPuerto.getText()), txtIp.getText());
+
+        if (txtIp.getText().equals("") || txtIp.getText().equals("")) {
+            JOptionPane.showMessageDialog(null, "Debe dar una ip y un puerto");
+        } else {
+            cliente.enviarMensaje("negro1", Integer.parseInt(txtPuerto.getText()), txtIp.getText());
+        }
     }//GEN-LAST:event_lbl1NegroActionPerformed
 
     private void lbl1rojoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lbl1rojoActionPerformed
         // TODO add your handling code here:
-        cliente.enviarMensaje("rojo1", Integer.parseInt(txtPuerto.getText()), txtIp.getText());
-
+        if (txtIp.getText().equals("") || txtIp.getText().equals("")) {
+            JOptionPane.showMessageDialog(null, "Debe dar una ip y un puerto");
+        } else {
+            cliente.enviarMensaje("rojo1", Integer.parseInt(txtPuerto.getText()), txtIp.getText());
+        }
     }//GEN-LAST:event_lbl1rojoActionPerformed
 
     private void lbl1azulActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lbl1azulActionPerformed
-        cliente.enviarMensaje("azul1", Integer.parseInt(txtPuerto.getText()), txtIp.getText());
-
+        if (txtIp.getText().equals("") || txtIp.getText().equals("")) {
+            JOptionPane.showMessageDialog(null, "Debe dar una ip y un puerto");
+        } else {
+            cliente.enviarMensaje("azul1", Integer.parseInt(txtPuerto.getText()), txtIp.getText());
+        }
     }//GEN-LAST:event_lbl1azulActionPerformed
 
     private void lbl2negroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lbl2negroActionPerformed
-        cliente.enviarMensaje("negro2", Integer.parseInt(txtPuerto.getText()), txtIp.getText());
-
+        if (txtIp.getText().equals("") || txtIp.getText().equals("")) {
+            JOptionPane.showMessageDialog(null, "Debe dar una ip y un puerto");
+        } else {
+            cliente.enviarMensaje("negro2", Integer.parseInt(txtPuerto.getText()), txtIp.getText());
+        }
     }//GEN-LAST:event_lbl2negroActionPerformed
 
     private void lbl2rojoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lbl2rojoActionPerformed
         // TODO add your handling code here:
-        cliente.enviarMensaje("rojo2", Integer.parseInt(txtPuerto.getText()), txtIp.getText());
-
+        if (txtIp.getText().equals("") || txtIp.getText().equals("")) {
+            JOptionPane.showMessageDialog(null, "Debe dar una ip y un puerto");
+        } else {
+            cliente.enviarMensaje("rojo2", Integer.parseInt(txtPuerto.getText()), txtIp.getText());
+        }
     }//GEN-LAST:event_lbl2rojoActionPerformed
 
     private void lbl2azulActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lbl2azulActionPerformed
         // TODO add your handling code here:
-        cliente.enviarMensaje("azul2", Integer.parseInt(txtPuerto.getText()), txtIp.getText());
-
+        if (txtIp.getText().equals("") || txtIp.getText().equals("")) {
+            JOptionPane.showMessageDialog(null, "Debe dar una ip y un puerto");
+        } else {
+            cliente.enviarMensaje("azul2", Integer.parseInt(txtPuerto.getText()), txtIp.getText());
+        }
     }//GEN-LAST:event_lbl2azulActionPerformed
 
     /**
