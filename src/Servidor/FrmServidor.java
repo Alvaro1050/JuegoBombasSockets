@@ -35,11 +35,11 @@ public class FrmServidor extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-        btn1112 = new javax.swing.JButton();
+        btnReiniciar = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         lbl1 = new javax.swing.JLabel();
         lbl2 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        btnIniciar = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
         txtPueto = new javax.swing.JTextField();
 
@@ -47,10 +47,10 @@ public class FrmServidor extends javax.swing.JFrame {
 
         jLabel1.setText("BOMBA 1");
 
-        btn1112.setText("REINICIAR");
-        btn1112.addActionListener(new java.awt.event.ActionListener() {
+        btnReiniciar.setText("REINICIAR");
+        btnReiniciar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn1112ActionPerformed(evt);
+                btnReiniciarActionPerformed(evt);
             }
         });
 
@@ -64,10 +64,10 @@ public class FrmServidor extends javax.swing.JFrame {
         lbl2.setText("30");
         lbl2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        jButton1.setText("iNICIAR");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        btnIniciar.setText("iNICIAR");
+        btnIniciar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                btnIniciarActionPerformed(evt);
             }
         });
 
@@ -97,9 +97,9 @@ public class FrmServidor extends javax.swing.JFrame {
                 .addContainerGap(134, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jButton1)
+                        .addComponent(btnIniciar)
                         .addGap(29, 29, 29)
-                        .addComponent(btn1112)
+                        .addComponent(btnReiniciar)
                         .addGap(135, 135, 135))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(txtPueto, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -122,23 +122,25 @@ public class FrmServidor extends javax.swing.JFrame {
                 .addComponent(txtPueto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 38, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btn1112)
-                    .addComponent(jButton1))
+                    .addComponent(btnReiniciar)
+                    .addComponent(btnIniciar))
                 .addGap(21, 21, 21))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btn1112ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn1112ActionPerformed
+    private void btnReiniciarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnReiniciarActionPerformed
         servidor.desconectar();
-        jButton1.setEnabled(false);
-        btn1112.setEnabled(true);
-    }//GEN-LAST:event_btn1112ActionPerformed
+        btnIniciar.setEnabled(true);
+        btnReiniciar.setEnabled(false);
+        txtPueto.setText("");
+    }//GEN-LAST:event_btnReiniciarActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void btnIniciarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIniciarActionPerformed
         // TODO add your handling code here:
-        jButton1.setEnabled(true);
+        btnIniciar.setEnabled(false);
+        btnReiniciar.setEnabled(true);
         servidor = new Servidor(this, Integer.parseInt(txtPueto.getText()));
         h1 = new HiloBomba1("Quira");
         h2 = new HiloBomba2("Alvaro");
@@ -148,13 +150,12 @@ public class FrmServidor extends javax.swing.JFrame {
         h1.start();
         h2.start();
 
-        btn1112.setEnabled(false);
         bomba1 = (int) ((Math.random() + 1) * 2);
         bomba2 = (int) ((Math.random() + 1) * 2);
 
         System.out.println("bomba 1    " + bomba1);
         System.out.println("bomba 2    " + bomba2);
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_btnIniciarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -192,8 +193,8 @@ public class FrmServidor extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    public static javax.swing.JButton btn1112;
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton btnIniciar;
+    public static javax.swing.JButton btnReiniciar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

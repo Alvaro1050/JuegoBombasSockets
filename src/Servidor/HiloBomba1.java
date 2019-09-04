@@ -36,7 +36,7 @@ public class HiloBomba1 extends Thread {
                 FrmServidor.lbl1.setText(segu + "");
 
                 if (segu == 0) {
-                    FrmServidor.btn1112.setEnabled(true);
+                    FrmServidor.btnReiniciar.setEnabled(true);
                     System.out.println("La bomba exploto");
                     JOptionPane.showMessageDialog(null, "LA bomba exploto");
                     FrmServidor.h1.stop();
